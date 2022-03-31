@@ -14,6 +14,12 @@ public class Bullet : MonoBehaviour
 
     private void OnCollisionEnter(Collision other) {
         if (other != null) {
+            Enemy character = other.gameObject.GetComponent<Enemy>();
+            if(character != null) {
+                Debug.Log(character);
+                character.TakeDamage(damage);
+            }
+
             Destroy(gameObject);
         }
     }

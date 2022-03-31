@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class BaseCharacter : MonoBehaviour, IDamageable
 {
-    private int health;
+    private int health = 100;
     public int Health { get { return health; } }
 
     public void TakeDamage(int damage) {
         health -= damage;
-        if (damage <= 0) {
+        if (health <= 0) {
             Die();
         }
     }
